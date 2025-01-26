@@ -60,6 +60,22 @@ body {
     font-family: inherit;
     font-size: 20px;
     text-transform: capitalize;
+    position: relative;
+}
+
+.nav__link::after {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 0px;
+    width: 0%;
+    border: 0px solid white;
+    transition: .3s;
+}
+
+.nav__link:hover::after {
+    border: 1px solid white;
+    width: 100%;
 }
 
 .header__menu {
@@ -80,10 +96,6 @@ body {
 
 .nav__item>span {
     margin: 0 5px;
-}
-
-.nav__link:hover {
-    text-decoration: underline;
 }
 
 .author {
@@ -131,28 +143,19 @@ body {
     position: relative;
     z-index: 0;
     border-radius: 16px;
+
+    transition: .5s;
+}
+
+.gallery__card:hover {
+    transform: scale(1.02);
+    z-index: 1;
 }
 
 .gallery__photo {
     width: 100%;
     border-radius: 16px;
     object-fit: cover;
-}
-
-.first {
-    grid-row: span 2;
-}
-
-.second {
-    grid-column: span 2;
-}
-
-.forth {
-    grid-row: span 2;
-}
-
-.fifth {
-    grid-column: span 2;
 }
 
 .second::after,
@@ -191,6 +194,16 @@ body {
     height: 100%;
 }
 
+.first,
+.forth {
+    grid-row: span 2;
+}
+
+.second,
+.fifth {
+    grid-column: span 2;
+}
+
 .footer {
     width: 100%;
     height: 186px;
@@ -209,9 +222,7 @@ body {
 @media screen and (max-width: 1245px) {
     .header__title {
         font-size: 100px;
-    }
-
-    
+    }    
 }
 
 @media screen and (max-width: 768px) {
@@ -239,8 +250,6 @@ body {
     .header {
         height: 500px;
     }
-
-    
 
     .footer__nav {
         flex-direction: column;
