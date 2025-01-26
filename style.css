@@ -251,9 +251,10 @@ body {
         height: 500px;
     }
 
+
     .footer__nav {
         flex-direction: column;
         gap: 20px;
         line-height: 1;
     }
-}
+
